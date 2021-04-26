@@ -11,7 +11,6 @@ public class ConstructorInjectedControler {
 	private final GreetingService greetingService;
 
 	public ConstructorInjectedControler(@Qualifier("constructorGreetingServiceImpl") GreetingService greetingService) {
-		super();
 		this.greetingService = greetingService;
 	}
 
