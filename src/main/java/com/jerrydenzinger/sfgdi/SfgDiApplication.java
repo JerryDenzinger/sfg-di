@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.jerrydenzinger.sfgdi.controllers.ConstructorInjectedControler;
+import com.jerrydenzinger.sfgdi.controllers.I18nController;
 import com.jerrydenzinger.sfgdi.controllers.MyController;
+import com.jerrydenzinger.sfgdi.controllers.PetController;
 import com.jerrydenzinger.sfgdi.controllers.PropertyInjectedController;
 import com.jerrydenzinger.sfgdi.controllers.SetterInjectedController;
 
@@ -14,6 +16,16 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+		
+		
+		PetController petController = (PetController) ctx.getBean("petController");
+		System.out.println("--- The Best Pet is ----");
+		System.out.println(petController.whichPetIsTheBest());
+		
+		
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println("---------Profile controlled");
+		System.out.println(i18nController.sayGreeting());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
