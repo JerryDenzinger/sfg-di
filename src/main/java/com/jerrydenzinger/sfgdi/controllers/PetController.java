@@ -1,21 +1,19 @@
 package com.jerrydenzinger.sfgdi.controllers;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import com.jerrydenzinger.sfgdi.services.BestPetService;
+import com.springframework.pets.PetService;
 
 @Controller
 public class PetController {
 
-	private final BestPetService bestPetService;
+    private final PetService petService;
 
-	public PetController(@Qualifier("bestPetService") BestPetService bestPetService) {
-		this.bestPetService = bestPetService;
-	}
+    public PetController(PetService petService) {
+        this.petService = petService;
+    }
 
-	public String whichPetIsTheBest() {
-		return bestPetService.whichPetIsTheBest();
-	}
-
+    public String whichPetIsTheBest(){
+        return petService.getPetType();
+    }
 }
