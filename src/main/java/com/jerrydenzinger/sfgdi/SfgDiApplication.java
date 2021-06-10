@@ -4,15 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.jerrydenzinger.sfgdi.config.SfgConfig;
-import com.jerrydenzinger.sfgdi.config.SfgConstructorConfig;
 import com.jerrydenzinger.sfgdi.controllers.ConstructorInjectedControler;
 import com.jerrydenzinger.sfgdi.controllers.I18nController;
 import com.jerrydenzinger.sfgdi.controllers.MyController;
 import com.jerrydenzinger.sfgdi.controllers.PetController;
 import com.jerrydenzinger.sfgdi.controllers.PropertyInjectedController;
 import com.jerrydenzinger.sfgdi.controllers.SetterInjectedController;
-import com.jerrydenzinger.sfgdi.datasource.FakeDataSource;
+
 
 @SpringBootApplication
 public class SfgDiApplication {
